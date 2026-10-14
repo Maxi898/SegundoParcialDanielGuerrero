@@ -344,6 +344,7 @@ public class VistaColegio extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new VistaColegio().setVisible(true));
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -375,4 +376,88 @@ public class VistaColegio extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtValorHora;
     // End of variables declaration//GEN-END:variables
+
+   // End of variables declaration                   
+    public String getNombre() {
+        return txtNombre.getText().trim();
+    }
+
+    public String getDireccion() {
+        return txtDireccion.getText().trim();
+    }
+
+    public String getTelefono() {
+        return txtTelefono.getText().trim();
+    }
+
+    public String getFechaNac() {
+        return txtFechaNac.getText().trim();
+    }
+
+    public String getCedula() {
+        return txtCedula.getText().trim();
+    }
+
+    public String getArea() {
+        return txtArea.getText().trim();
+    }
+
+    public double getValorHora() {
+        return Double.parseDouble(txtValorHora.getText().trim());
+    }
+
+    public int getHorasDictadas() {
+        return Integer.parseInt(txtHoras.getText().trim());
+    }
+
+    public String getCodigo() {
+        return txtCodigo.getText().trim();
+    }
+
+    public String getGrado() {
+        return txtGrado.getText().trim();
+    }
+
+    public void mostrarAlerta(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
+
+    public void mostrarReporte(String titulo, String cuerpo) {
+        javax.swing.JTextArea areaTexto = new javax.swing.JTextArea(cuerpo);
+        areaTexto.setEditable(false);
+        areaTexto.setFont(new java.awt.Font("Monospaced", java.awt.Font.PLAIN, 12));
+        javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(areaTexto);
+        scroll.setPreferredSize(new java.awt.Dimension(650, 350));
+        javax.swing.JOptionPane.showMessageDialog(this, scroll, titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void limpiarCampos() {
+        txtNombre.setText("");
+        txtDireccion.setText("");
+        txtTelefono.setText("");
+        txtFechaNac.setText("");
+        txtCedula.setText("");
+        txtArea.setText("");
+        txtValorHora.setText("");
+        txtHoras.setText("");
+        txtCodigo.setText("");
+        txtGrado.setText("");
+    }
+
+    public void setRegistrarProfesorListener(java.awt.event.ActionListener l) {
+        btnRegistrarProfesor.addActionListener(l);
+    }
+
+    public void setRegistrarEstudianteListener(java.awt.event.ActionListener l) {
+        btnRegistrarEstudiante.addActionListener(l);
+    }
+
+    public void setReporteNominaListener(java.awt.event.ActionListener l) {
+        btnReporteNomina.addActionListener(l);
+    }
+
+    public void setReporteGeneralListener(java.awt.event.ActionListener l) {
+        btnReporteGeneral.addActionListener(l);
+    }
 }
+
